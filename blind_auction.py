@@ -7,35 +7,32 @@ start_code = True
 
 data_base = {}
 values_bid = []
-def most_expensive(value):
+
+
+def find_highest_bidder(bidding_dictionary):
     max_value = 0
-    for j in value:
-        if j > max_value:
-            max_value = j
+    for bidder in bidding_dictionary:
+        if bidder > max_value:
+            max_value = bidder
     print(draw.result)
-    return (f'The highest value is R${max_value}')
+    return (f'The highest bid is R${max_value}')
     
 while start_code:
     name_user = input('What is your name?: ')
     bid_user = int(input('What is your bid?: $'))
     bidders_question = input("Are there any other bidders?: Type 'yes' or 'no'.\n").lower()
 
-    #Adding the bid for the list
-    values_bid += [bid_user]
-    #Adding name and bid in the dicti
-    data_base[name_user] = bid_user
+    values_bid += [bid_user]     #Adding the bid for the list
+    data_base[name_user] = bid_user    #Adding name and bid in the dicti
 
     if bidders_question == "no":
         start_code = False
-        print(most_expensive(value=values_bid))
+        print(find_highest_bidder(bidding_dictionary=values_bid))
 
     elif bidders_question == "yes":
         os.system('cls' if os.name == 'nt' else 'clear') #-Clean the screen after the user's input
     else:
-        print("Please enter a valid value")
-
-
-
+        print("Please enter a valid bidding_dictionary")
 for user in data_base:
     print(f'{user}: ${data_base[user]}')
 
