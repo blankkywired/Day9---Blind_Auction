@@ -10,11 +10,13 @@ values_bid = []
 
 
 def find_highest_bidder(bidding_dictionary):
+    winner = ""
     max_value = 0
     for bidder in bidding_dictionary:
         if bidder > max_value:
             max_value = bidder
     print(draw.result)
+    print(winner)
     return (f'The highest bid is R${max_value}')
     
 while start_code:
