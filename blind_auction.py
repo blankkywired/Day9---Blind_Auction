@@ -6,7 +6,7 @@ print(draw.logo)
 start_code = True
 
 data_base = {}
-values_bid = []
+
 
 def find_highest_bidder(bidding_dictionary):
     winner = ""
